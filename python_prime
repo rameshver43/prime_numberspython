@@ -1,0 +1,33 @@
+def fun(x):
+    for i in range(2,x-1):
+       if x%i==0:
+          return False
+       return True
+# input n for numbers of mersenne prime number
+n=int(input())
+
+if n==1:
+   print("p 2*p-1")
+   print()
+   print("2 3")
+elif n==2:
+   print("p"+ " "+"2*p-1")
+   print()
+   print("2 3")
+   print("3 7")
+else:
+   print("p 2*p-1")
+   print()
+   print("2 3")
+   print("3 7")
+   n=n-2
+   for i in range(4,1000000):
+        if fun(i)==True:
+            x=(2**i-1)
+            y=fun(x)
+            if y==True:
+                print(i,end=" ")
+                print(x)
+                n=n-1
+        if n<=0:
+           break;
